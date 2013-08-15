@@ -1,0 +1,461 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"max-",
+				"max-width"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"botto",
+				"text-bottom"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"background-c",
+				"background-color"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"text-",
+				"text-align"
+			],
+			[
+				"point",
+				"pointsFor"
+			],
+			[
+				"c",
+				"current"
+			],
+			[
+				"current",
+				"currentDate"
+			],
+			[
+				"con",
+				"config"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "2013-05-30-hierarchy-adaptation.markdown",
+			"settings":
+			{
+				"buffer_size": 764,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "---\nlayout: post\ntitle: Bring your Play! 2 Heroku slug size under control\ncategories: [scala, Play! 2]\ntags: [heroku, scala, Play! 2, shell]\ndate: 2013-08-14 09:00\npublished: true\ncomments: true\nsharing: true\nfooter: true\n---\n\nI had been bothered by the slug size before, but never took the time to investigate. I couldn't understand why `sbt dist` could yield a 34MB zip and Heroku would end up with a > 100MB archive. While deploying an upgrate to Play! 2.1.3 I noticed it had bloated to 142MB, I had to act.\n\nI cloned the official [Heroku buildpack for scala](https://github.com/heroku/heroku-buildpack-scala), added some debug output using `du` and `find` to try and understand were the bloat was coming from. To configure a buildpack for you app, all you have to do is run the following command \n```\n$ heroku config:set BUILDPACK_URL=https://github.com/jeantil/heroku-buildpack-scala.git\n```\nThe current heroku buildpack uses `sbt clean compile stage` as its main command instead of `sbt dist`. I haven't changed that as I don't understand the implications well enough and the current setup works for me. \n\n",
+			"file": "2013-08-14-bring-your-play2-slug-size.markdown",
+			"file_size": 898,
+			"file_write_time": 130210271350000000,
+			"settings":
+			{
+				"buffer_size": 1112,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/jean/dev/comm/blog.byjean.eu/_config.yml",
+			"settings":
+			{
+				"buffer_size": 2960,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 227.0,
+		"selected_items":
+		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"indent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"xml",
+				"Set Syntax: XML"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"inde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 181.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/jean/dev/comm/blog.byjean.eu/source/_posts/2013-05-30-hierarchy-adaptation.markdown",
+		"/Users/jean/dev/comm/blog.byjean.eu/source/_posts/2013-08-14-bring-your-play2-slug-size.markdown",
+		"/Users/jean/dev/sdev/src/perso/xndf-jean/deploy2.log",
+		"/Users/jean/dev/orange/src/onserver-review/model/pom.xml",
+		"/Users/jean/dev/jdev/src/work/SVN_AUDIT_XEBIA/SRC_MOL/web/mol/jsp/frontOffice/mapa/vitrine.jsp",
+		"/Users/jean/dev/websites/scala.io_web_main/en/speakers/pascal-voitot.md",
+		"/Users/jean/dev/websites/scala.io_web_main/en/events/hands-on-spray-rest-on-akka.md",
+		"/Users/jean/dev/sdev/src/perso/xndf-jean/vendor/newrelic/newrelic-extension.xsd",
+		"/Users/jean/dev/websites/scala.io_web_main/en/speakers/nicolas-martignole.md",
+		"/Users/jean/dev/websites/scala.io_web_main/en/speakers/stefan-zeiger.md",
+		"/Users/jean/dev/websites/scala.io_web_main/en/pages/sponsorship.md",
+		"/Users/jean/Downloads/temp.xml",
+		"/Users/jean/dev/websites/scala.io_web_main/en/speakers/age-mooij.md",
+		"/Users/jean/dev/websites/scala.io_web_main/en/speakers/raymond-roestenburg.md",
+		"/Users/jean/dev/websites/scala.io_web_main/en/partners/0_arolla.md",
+		"/Users/jean/dev/websites/scala.io_web_main/en/partners/1_xebia.md",
+		"/Users/jean/dev/websites/scala.io_web_main/en/speakers/arnaud-bailly.md",
+		"/Users/jean/dev/orange/src/libon-server-config/on-staging.properties",
+		"/Users/jean/dev/websites/scala.io_web_main/en/partners/4_42.md",
+		"/Users/jean/dev/websites/scala.io_web_main/en/pages/venue.md",
+		"/Users/jean/dev/websites/scala.io_web_main/templates/default.html",
+		"/Users/jean/dev/websites/scala.io_web_main/en/partners/1_lateral_thoughts.md",
+		"/Users/jean/dev/websites/scala.io_web_main/en/pages/cfp.md",
+		"/Users/jean/dev/websites/scala.io_web_main/en/pages/faq.md",
+		"/Users/jean/dev/websites/scala.io_web_main/en/pages/tickets.md",
+		"/Users/jean/dev/websites/scala.io_web_main/assets/css/bootstrap/variables.less",
+		"/Users/jean/dev/websites/scala.io_web_main/en/partners/clever_cloud.md",
+		"/Users/jean/dev/websites/scala.io_web_main/en/partners/ebiznext.md",
+		"/Users/jean/dev/websites/scala.io_web_main/en/partners/express-board.md",
+		"/Users/jean/dev/websites/scala.io_web_main/en/partners/lateral_thoughts.md",
+		"/Users/jean/dev/websites/scala.io_web_main/en/partners/typesafe.md",
+		"/Users/jean/dev/websites/scala.io_web_main/en/partners/xebia.md",
+		"/Users/jean/dev/websites/scala.io_web_main/templates/partners-page.html",
+		"/Users/jean/dev/websites/scala.io_web_main/en/events/whats-new-in-shapeless.md",
+		"/Users/jean/dev/websites/scala.io_web_main/en/events/akka-in-practice_design_actor_based_applications.md",
+		"/Users/jean/dev/websites/scala.io_web_main/templates/partner-item.html",
+		"/Users/jean/dev/websites/scala.io_web_main/assets/css/style.css",
+		"/Users/jean/dev/websites/scala.io_web_main/en/events/launch-conference.md",
+		"/Users/jean/dev/websites/scala.io_web_main/en/events/shapeless-fancy-types-for-generic-programming.md",
+		"/Users/jean/dev/websites/scala.io_web_main/en/events/database-access-with-slick.md",
+		"/Users/jean/dev/websites/scala.io_web_main/en/events/voyager-avec-play-scala-et-Akka.md",
+		"/Users/jean/dev/websites/scala.io_web_main/en/events/purely-functional-io.md",
+		"/Users/jean/dev/websites/scala.io_web_main/en/events/scala-design-patterns.md",
+		"/Users/jean/dev/websites/scala.io_web_main/en/events/scraping-the-web-with-clojure.md",
+		"/Users/jean/dev/websites/scala.io_web_main/en/speakers/raymond_roestenburg.md",
+		"/Users/jean/dev/websites/scala.io_web_main/en/speakers/miles-sabin.md",
+		"/Users/jean/dev/websites/scala.io_web_main/en/events/akka-in-practice_design_actor_based_applications.m",
+		"/Users/jean/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/jean/Documents/4695185.csv",
+		"/Users/jean/dev/websites/scala.io_web_main/en/partners/42.md",
+		"/Users/jean/dev/websites/scala.io_web_main/assets/images/partners/host/logo-typesafe.png",
+		"/Users/jean/dev/websites/scala.io_web_main/fr/pages/tickets.md",
+		"/Users/jean/dev/websites/scala.io_web_main/fr/partners/companycampus.md",
+		"/Users/jean/dev/websites/scala.io_web_main/fr/partners/lateral_thoughts.md",
+		"/Users/jean/dev/websites/scala.io_web_main/templates/partner.html",
+		"/Users/jean/dev/websites/scala.io_web_main/assets/images/partners/friends/logo-typesafe.png",
+		"/Users/jean/dev/websites/scala.io_web_main/fr/partners/typesafe.md",
+		"/Users/jean/dev/websites/scala.io_web_main/fr/partners/clever_cloud.md",
+		"/Users/jean/dev/websites/scala.io_web_main/fr/pages/sponsorship.md",
+		"/Users/jean/dev/websites/scala.io_web_main/fr/pages/venue.md",
+		"/Users/jean/dev/websites/scala.io_web_main/templates/index.html",
+		"/Users/jean/dev/websites/scala.io_web_main/fr/index.html",
+		"/Users/jean/dev/websites/scala.io_web_main/templates/tickets.html",
+		"/Users/jean/dev/websites/scala.io_web_main/fr/speakers/viktor-klang.md",
+		"/Users/jean/dev/websites/scala.io_web_main/templates/speaker-item.html",
+		"/Users/jean/dev/websites/scala.io_web_main/fr/speakers/miles-sabin.md",
+		"/Users/jean/dev/websites/scala.io_web_main/fr/speakers/iulian-dragos.md",
+		"/Users/jean/dev/websites/scala.io_web_main/fr/events/launch-conference.md",
+		"/Users/jean/dev/orange/src/libon-server-data-scripts/README",
+		"/Users/jean/dev/orange/src/libon-server-data-scripts/ON-19682.sql",
+		"/Users/jean/dev/websites/scala.io_web_main/en/index.html",
+		"/Users/jean/dev/orange/src/onserver/hackathon.xml",
+		"/Users/jean/dev/jsdev/src/xebia-mobile-awards/server/resources/questions.js",
+		"/Users/jean/dev/jsdev/src/xebia-mobile-awards/server/utils.js",
+		"/Users/jean/dev/jsdev/src/xebia-mobile-awards/server/import.js",
+		"/Users/jean/dev/jsdev/src/xebia-mobile-awards/server/config.js",
+		"/Users/jean/dev/jsdev/src/xebia-mobile-awards/server/migrations/points_to_integers.js",
+		"/Users/jean/dev/orange/src/libon-server-config/on-prod.properties",
+		"/Users/jean/dev/jsdev/src/xebia-mobile-awards/server/questions.csv",
+		"/Users/jean/dev/jsdev/src/xebia-mobile-awards/server/resources/user.js",
+		"/Users/jean/dev/jsdev/src/xebia-mobile-awards/server/database/userdb.js",
+		"/Users/jean/dev/jsdev/src/xebia-mobile-awards/server/resources/answers.js",
+		"/Users/jean/dev/orange/var/onhome/cassandra/conf-old/cassandra-env.sh",
+		"/Users/jean/dev/orange/var/onhome/cassandra/conf/cassandra-env.sh",
+		"/Users/jean/dev/opt/apache-cassandra-1.1.6/conf/cassandra.yaml",
+		"/Users/jean/dev/opt/apache-cassandra-1.1.6/conf/cassandra-env.sh"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/jean/dev/comm/blog.byjean.eu",
+			"/Users/jean/dev/websites/scala.io_web_main/assets/css",
+			"*",
+			".",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"disqus",
+			"disqus_short_name",
+			"xmpp",
+			"body",
+			"600px",
+			"1250",
+			"<i class=\"icon-ok\">",
+			"----------------\n",
+			"span2",
+			"<img src=\"assets/images/dot.png\"/>",
+			"-->",
+			"tablesub",
+			"<td>",
+			"		<td></td>",
+			"		<",
+			"<th>",
+			"th>",
+			"th",
+			"                                                 ",
+			"mblox",
+			"/user",
+			");\n",
+			"looking for user",
+			"admin",
+			"\"_id\" :",
+			"\"_id\"",
+			"it",
+			" \"",
+			"1",
+			"findUnansweredUntil"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "2013-05-30-hierarchy-adaptation.markdown",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 764,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								98,
+								98
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "2013-08-14-bring-your-play2-slug-size.markdown",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1112,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1112,
+								1112
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/jean/dev/comm/blog.byjean.eu/_config.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2960,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2214,
+								2214
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage"
+						},
+						"translation.x": 36.0,
+						"translation.y": 835.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"project": "/Users/jean/dev/comm/blog.byjean.eu/blog.sublime-project",
+	"replace":
+	{
+		"height": 56.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"en/partners/1_xebia.md"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 425.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
