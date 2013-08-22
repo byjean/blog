@@ -7,6 +7,9 @@ date: 2013-08-15 09:00
 published: true
 comments: true
 ---
+*** EDIT 2013-08-19 ***
+
+***I recommend reading up the [pull request](https://github.com/heroku/heroku-buildpack-scala/pull/48) discussion at github. Basically, if you have a JVM based application, your absolute minimum slug size will be around 77MB because you _must_ package your own JRE in your slug. The default JRE for the stack is not upgraded on a regular basis leaving you exposed to security vulnerabilities.***
 
 I had been bothered by my Play! 2 apps slug size before, but never took the time to investigate. I couldn't understand why `sbt dist` would yield a 34MB zip while Heroku would end up with a > 100MB archive. While deploying an upgrate to Play! 2.1.3, I noticed it had bloated to 142MB: I had to act.
 
