@@ -9,7 +9,7 @@ comments: true
 ---
 *** EDIT 2013-10-11 ***
 
-The pull request has been merged. In the discussion, [Josh Suereth](http://jsuereth.com/) suggested it should be possible to use the [sbt-native-packager](http://www.scala-sbt.org/sbt-native-packager/) which replaced the dist command in play 2.2 to make a better build pack. 
+***The pull request has been merged. In the discussion, [Josh Suereth](http://jsuereth.com/) suggested it should be possible to use the [sbt-native-packager](http://www.scala-sbt.org/sbt-native-packager/) which replaced the dist command in play 2.2 to make a better build pack.*** 
 
 *** EDIT 2013-08-19 ***
 
