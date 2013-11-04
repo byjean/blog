@@ -7,6 +7,10 @@ date: 2013-08-15 09:00
 published: true
 comments: true
 ---
+*** EDIT 2013-10-11 ***
+
+The pull request has been merged. In the discussion, [Josh Suereth](http://jsuereth.com/) suggested it should be possible to use the [sbt-native-packager](http://www.scala-sbt.org/sbt-native-packager/) which replaced the dist command in play 2.2 to make a better build pack. 
+
 *** EDIT 2013-08-19 ***
 
 ***I recommend reading up the [pull request](https://github.com/heroku/heroku-buildpack-scala/pull/48) discussion at github. Basically, if you have a JVM based application, your absolute minimum slug size will be around 77MB because you _must_ package your own JRE in your slug. The default JRE for the stack is not upgraded on a regular basis leaving you exposed to security vulnerabilities.***
