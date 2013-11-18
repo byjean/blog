@@ -5,6 +5,7 @@ category: java
 tags: [bugs, java, workaround]
 date: 2013-08-22 18:45
 published: true
+comments: true
 ---
 
 JDK 7 introduced NIO.2 and the `java.nio.file` package, within it came the Files featuring a very interesting method : `probeContentType(Path path)`. Mime type detection is always a pain, thus having a simple way to do it in the JDK is a very interesting feature indeed. Unfortunately, on Mac OS X, this feature is broken (see my [gist](https://gist.github.com/jeantil/6306467) for a test program). 
