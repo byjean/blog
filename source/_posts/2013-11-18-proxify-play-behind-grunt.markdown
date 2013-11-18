@@ -3,7 +3,7 @@ layout: post
 title: Proxifying play server behind grunt for full stack dev
 categories: [scala, js]
 tags: [scala, Play! 2, js]
-date: 2013-11-18 15:00
+date: 2013-11-18 14:00
 published: true
 comments: true
 ---
