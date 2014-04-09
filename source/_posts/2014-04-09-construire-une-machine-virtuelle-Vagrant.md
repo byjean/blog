@@ -3,7 +3,7 @@ layout: post
 title: Construire une machine virtuelle avec Vagrant
 categories: [tips]
 tags: [vagrant,virtualization]
-published: false
+published: true
 comments: true
 locale: fr
 ---
@@ -13,13 +13,15 @@ Dans un précédent billet, nous avons vu comment installer vagrant facilement s
 Construire une image vide
 -------
 Crééz vous un dossier pour le projet et placez vous dedans:
-```
+
+```bash
 mkdir website
 cd website
 ```
 
 Crééz un fichier nommé `Vagrantfile` et ajoutez-y le contenu suivant:
-```
+
+```bash
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
@@ -34,6 +36,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder ".", "/home/vagrant/website"  
 end
 ```
+
 Maintenant vous avez un `Vagrantfile` minimal, il va télécharger une image nommée `precise64` depuis le _Cloud_ ( en fait http://files.vagrantup.com/ ) et s'en servir pour créer une instance virtualbox _headless_ avec 2Go de RAM. L'image `precise64` est en fait une image contenant Ubuntu 12.04.4 (precise pangola) pré-installé.
 
 Ce fichier vagrant va également configurer une synchronisation du dossier courant côté hôte (donc le dossier website créé plus haut) avec le dossier `/home/vagrant/website` dans la VM. Par défaut le dossier courant est mappé sur `/vagrant` dans la VM mais je préfère rester dans un sous dossier de `$HOME` sur l'hôte comme sur la vm.
@@ -43,11 +46,14 @@ Ce fichier vagrant va également configurer une synchronisation du dossier coura
 Manipuler l'état de la VM
 --------
 Nous sommes maintenants prêts à démarrer notre VM:
-```
+
+```bash
 vagrant up
 ```
+
 Cela devrait vous afficher quelque chose comme :
-```
+
+```bash
 $ vagrant up
 Bringing machine 'default' up with 'virtualbox' provider...
 ==> default: Importing base box 'precise64'...
@@ -80,17 +86,23 @@ Bringing machine 'default' up with 'virtualbox' provider...
     default: /vagrant => /private/tmp/vagrant
     default: /home/vagrant/website => /private/tmp/vagrant
 ```
+
 Bravo, votre VM est démarrée, il reste à s'y connecter. Lors du démarrag, vous avez peut-être remarqué les lignes:
-```
+
+```bash
 ==> default: Forwarding ports...
     default: 22 => 2222 (adapter 1)
 ```
+
 On se connecte donc en ssh sur la machine:
-```
+
+```bash
 vagrant ssh
 ```
+
 À l'issue de cette commande vous êtes dans un shell exécuté dans la machine virtuelle.
-```
+
+```bash
 Welcome to Ubuntu 12.04 LTS (GNU/Linux 3.2.0-23-generic x86_64)
 
  * Documentation:  https://help.ubuntu.com/
@@ -100,20 +112,26 @@ vagrant@precise64:~$
 ```
 
 Quittez ce shell, nous allons maintenant arrêter la VM:
-```
+
+```bash
 vagrant halt
 ```
+
 qui devrait vous afficher
-```
+
+```bash
 ==> default: Attempting graceful shutdown of VM...
 ```
 
 Une dernière commande qui peut ête utile, supprimer la VM. Cela peut servir si vous décidez d'arrêter de travailler sur le projet ou si vous voulez recréer complètement la VM _from scratch_.
-```
+
+```bash
 vagrant destroy
 ```
+
 Cette commande va vous demander confirmation et si besoin arrêter la VM.
-```
+
+```bash
    default: Are you sure you want to destroy the 'default' VM? [y/N] y
 ==> default: Destroying VM and associated drives...
 ```
