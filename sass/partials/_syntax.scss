@@ -138,7 +138,7 @@ figure .highlight {
     background: $base03 $noise-bg;
   }
 
-  .line-numbers {
+  .linenos {
     text-align: right;
     pre { color: $base01; }
 
@@ -218,7 +218,9 @@ figure .highlight {
   .s1     { color: $solar-cyan; }                                             /* Literal.String.Single */
   //.ss     { color: #990073 }                                          /* Literal.String.Symbol */
   //.il     { color: #009999 }                                          /* Literal.Number.Integer.Long */
-  div { .gd, .gd .x, .gi, .gi .x { display: inline-block; width: 100%; }}
+  div { .gd, .gd .x, .gi, .gi .x { display: inline-block; width: 100%;}}
+  td.code div { border: 0; }
+  div.linenodiv {border: 1px solid $pre-border;}
 }
 
 $solar-scroll-bg: rgba(#fff, .15);
@@ -232,4 +234,3 @@ pre, figure .highlight {
   &::-webkit-scrollbar {  height: .5em; background: $solar-scroll-bg; }
   &::-webkit-scrollbar-thumb:horizontal { background: $solar-scroll-thumb;  -webkit-border-radius: 4px; border-radius: 4px }
 }
-

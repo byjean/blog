@@ -34,5 +34,7 @@ single: true
 </div>
 {% unless page.sidebar == false %}
 <aside class="sidebar">
+  {% include asides/recent_posts.html %}
+  {% include asides/github.html %}
 </aside>
 {% endunless %}

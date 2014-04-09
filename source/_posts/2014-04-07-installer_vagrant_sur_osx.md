@@ -1,10 +1,9 @@
 ---
 layout: post
-title: Installation facile de vagrant sur OS X
+title: Installation facile de vagrant sur OSX
 categories: [tips]
 tags: [vagrant, virtualization, brew]
 published: true
-date: 2014-04-07 14:00
 comments: true
 ---
 
@@ -17,7 +16,8 @@ Premièrement, installez Homebrew
 Si vous n'avez pas encore installé [Homebrew](http://brew.sh), il est grand temps de le faire. Je vous promet que vous ne le regretterez pas. Homebrew est très propre et installe ses logiciels dans `/usr/local/Cellar/` puis crée des liens symboliques vers les logiciels dans `/usr/local/bin`. Aucune "pollution" du système n'est a craindre.
 
 L'installation de homebrew lui-même est très simple:
-```shell
+
+```bash
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 ```
 
@@ -25,7 +25,8 @@ Deuxièmement, installez Vagrant
 --------
 
 Avec Homebrew, installer vagrant devient facile:
-```
+
+```bash
 brew update
 brew tap phinze/homebrew-cask
 brew install brew-cask
@@ -35,7 +36,8 @@ brew cask install vagrant
 Troisièmement, il n'y a pas de troisièmement
 ---------
 Félicitations! Vagrant est maintenant installé sur votre mac. Vous pouvez le vérifier en faisant:
-```
+
+```bash
  $ vagrant --version
 Vagrant 1.5.1
 ```
