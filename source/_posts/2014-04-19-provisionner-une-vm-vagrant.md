@@ -59,6 +59,7 @@ Exemple de script de _provisioning_
 ----------
 
 Notre fichier de définition dépends d'une image `precise64` donc notre VM tournera sous ubuntu. Le script suivant effectue pour vous les tâches suivantes:
+
 - capture le nom d'utilisateur qui lui est passé en tant que premier argument
 - met à jour les dépôts apt de l'OS,
 - ajoute un outil permettant d'ajouter des dépôts facilement,
@@ -68,7 +69,7 @@ Notre fichier de définition dépends d'une image `precise64` donc notre VM tour
 - configure redis
 - installe elastic search
 - install sbt
-- se place dans dossier de dev et lance un premier sbt update
+- se place dans le dossier de dev et lance un premier sbt update
 
 ```bash
 #!/usr/bin/env bash
