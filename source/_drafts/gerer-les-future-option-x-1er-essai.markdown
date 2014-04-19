@@ -1,10 +1,9 @@
 ---
 layout: post
-title: Gérer les Future[Option[T]] &#58; 1er essai
-categories: [test,omg]
+title: Gérer les Future[Option[T]], 1er essai
+categories: [scala,craftsmanship]
 tags: [scala, play2]
-date: 2015-03-18 16:05
-published: true
+published: false
 comments: true
 locale: fr
 ---
@@ -220,4 +219,4 @@ object ArticleController extends play.api.mvc.Controller {
 }
 ```
 
-Nous avons amélioré notre code initial, extrait une fonctionnalité transverse mais est-ce que cette nouvelle version est vraiment satisfaisante ? Je ne suis pas vraiment satisfait des lignes 28 à 33 du `JsonResultMapper`. Les cas d'erreurs ne sont pas traités dans le même bloc logique et ça me déplait. Nous verrons une prochaine fois comment améliorer ce point.
+Nous avons amélioré notre code initial, extrait une fonctionnalité transverse mais est-ce que cette nouvelle version est vraiment satisfaisante ? Je ne suis pas vraiment satisfait des lignes 28 à 33 du `JsonResultMapper`. Les cas d'erreurs ne sont pas traités dans le même bloc logique et ça me déplait, utiliser le pattern matching pour "cacher" l'imbrication des appels à map fonctionne mais laisse également à désirer. Nous verrons dans un prochain article une autre solution au problème présenté qui tentera de résoudre ces points.
