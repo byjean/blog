@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Installation facile de vagrant sur OSX
-categories: [tips]
+categories: [devops]
 tags: [vagrant, virtualization, brew]
 published: true
 comments: true

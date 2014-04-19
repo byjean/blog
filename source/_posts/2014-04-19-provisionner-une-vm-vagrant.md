@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Provisionner une machine virtuelle avec Vagrant
-categories: [tips]
+categories: [devops]
 tags: [vagrant, web]
 published: true
 comments: true

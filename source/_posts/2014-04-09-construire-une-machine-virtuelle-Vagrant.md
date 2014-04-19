@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Construire une machine virtuelle avec Vagrant
-categories: [tips]
+categories: [devops] 
 tags: [vagrant,virtualization]
 published: true
 comments: true

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hierarchy adaptation kata
-category: java
+category: [java]
 tags: [kata, java, craftsmanship]
 date: 2013-08-27 14:43
 published: false
@@ -20,12 +20,12 @@ At first your models are simple and converters work out just fine, but soon you 
 
 Dozer is indeed a possible solution, but it also has limitations. It can require a lot of configuration, it uses reflection for runtime mapping which can cause performance problems. It can be deemed *heavy* to integrate at the beggining of a project. I believe other solutions are worth investigating too.
 
-When exercising on this kata, here are a few points worth paying attention to: 
+When exercising on this kata, here are a few points worth paying attention to:
 - Do not create package dependency cycles
-- Keep your code testable (Be careful with static ;) ) 
+- Keep your code testable (Be careful with static ;) )
 - Do not use unchecked casts
 
-In your first attempts, try to actually write the conversion code yourself, later you can try and integrate Dozer to see what it brings you, you can also try and remove the double hierarchy keeping only one. 
+In your first attempts, try to actually write the conversion code yourself, later you can try and integrate Dozer to see what it brings you, you can also try and remove the double hierarchy keeping only one.
 
 There are *integration* tests to make sure you actually solve the problems, there are also *unit* tests for the provided code.
 
