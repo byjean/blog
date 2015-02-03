@@ -1,15 +1,14 @@
 ---
 layout: post
-title: Future[Option[T]], 1er essai
-categories: [scala,craftsmanship]
-tags: [scala, play2]
+title: Refactorer Future[Option[T]]
+tags: [scala, play2, refactoring,craftsmanship]
 comments: true
 locale: fr
 ---
 
-Depuis quelques temps je travaille sur une application Play 2 en scala. Nos APIs d'accès aux données sont asynchrones et renvoient toutes des `Futures[T]`. Avec une telle API, on se retrouve vite avec des signatures de type `Future[Option[T]]`. Transformer proprement un tel résultat vers des réponses HTTP propres n'est pas forcément évident et peut amener de la duplication même dans des cas simples. Dans cet article nous allons voir une première façon d'éviter ce problème.
+Depuis quelques temps je travaille sur une application Play 2 en scala. Nos APIs d'accès aux données sont asynchrones et renvoient toutes des `Futures[T]`. Avec une telle API, on se retrouve vite avec des signatures de type `Future[Option[T]]`. Transformer proprement un tel résultat vers des réponses HTTP propres n'est pas forcément évident et peut amener de la duplication même dans des cas simples. Dans cet article nous allons voir une façon d'éviter ce problème.
 
-Le service et son domaine
+Contexte
 ------
 Partons d'un exemple simple et développons un micro-service qui expose des `Articles` au format JSON. Il ne permet que de lire le détail d'un article à partir de son identifiant en accédant à la ressource suivante :
 
@@ -28,7 +27,7 @@ object Article {
 
 ```
 
-Afin de relire un article depuis notre base de donnée, nous disponson d'un `Repository` asynchrone dont l'interface est la suivante :
+Afin de lire un article depuis notre base de donnée, nous disposons d'un `Repository` asynchrone dont l'interface est la suivante :
 
 ```scala
 trait ArticleRepository {
@@ -98,7 +97,7 @@ object ArticleController extends play.api.mvc.Controller {
 
 Nous avons maintenant un service qui renvoie du JSON même en cas d'erreur, tout en conservant la sémantique des codes de retour HTTP.
 
-Nous avons dû extraire des méthodes pour garder le code a peu près lisible. Ces méthodes n'ont pas l'air d'être spécifque à notre controller : elles ne manipulent aucunement les articles. Il est probables qu'elles ne soient pas à leur place, mais nous y reviendront plus tard.
+Nous avons dû extraire des méthodes pour conserver un minimum de libilité. Ces méthodes n'ont pas l'air d'être spécifque à notre controller : elles ne manipulent aucunement les articles. Il est probables qu'elles ne soient pas à leur place, mais nous y reviendront plus tard.
 
 *(Si vous êtes horrifés que je fasse du refactoring sans tests, rassurez-vous j'ai des tests mais ils ne sont pas l'objet de cet article)*
 
@@ -176,9 +175,9 @@ def get(id: String) = Action.async { implicit request =>
   }
 ```
 
-Je trouve cette forme plus facile à lire. Il saute aux yeux que la fonction gère 1 cas de succès et 2 cas d'erreurs, mais les cas d'erreur ne sont pas gérés ensemble a cause de l'utilisation du type Option.
+Je trouve cette forme plus facile à lire. Il saute aux yeux que la fonction gère 1 cas de succès et 2 cas d'erreurs. les cas d'erreur ne sont pas gérés ensemble c'est l'une des limites de ce refactoring.
 
-C'est d'autant plus regrettable que les 2 cas d'erreur ne dépendent pas vraiment de la resource, ils sont plutôt génériques (au message d'erreur près). Nous pouvons extraire la responsabilité de transformer un résultat en Json dans une classe:
+C'est regrettable car les 2 cas d'erreur ne dépendent pas vraiment de la resource, ils sont assez génériques. Nous pouvons tout de même extraire la responsabilité de transformer un résultat (succès ou échec) en JSON dans une classe spécialisée :
 
 ```scala
 import play.api.libs.concurrent.Execution.Implicits._
@@ -218,7 +217,7 @@ object JsonResultMapper extends Results {
 }
 ```
 
-et notre ressource devient alors
+et notre ressource devient alors :
 
 ```scala
 object ArticleController extends play.api.mvc.Controller {
@@ -231,4 +230,9 @@ object ArticleController extends play.api.mvc.Controller {
 }
 ```
 
-Nous avons amélioré notre code initial, extrait une fonctionnalité transverse mais est-ce que cette nouvelle version est vraiment satisfaisante ? Je ne suis pas vraiment satisfait des lignes 28 à 33 du `JsonResultMapper`. Les cas d'erreurs ne sont pas traités dans le même bloc logique et ça me déplait, utiliser le pattern matching pour "cacher" l'imbrication des appels à map fonctionne mais laisse également à désirer. Nous verrons dans un prochain article une autre solution au problème présenté qui tentera de résoudre ces points.
+Conclusion
+----
+
+Nous avons amélioré notre code initial, extrait une fonctionnalité transverse et fortement gagné en lisibilité dans la resource. Celle ci n'a désormais pour responsabilité que de coordonner le chargement de l'article et de demander la transformation en JSON au service correspondant. Dans le cas d'un appel plus complexe, on pourrait effectuer la validation du format d'entrée (`Form#bindFromRequest` ou `Json#validate`) et extraire l'appel du repository dans un service.
+
+Cependant les lignes 28 à 33 du `JsonResultMapper` restent suspectes. Les cas d'erreurs ne sont pas traités dans le même bloc logique et utiliser le pattern matching pour "cacher" l'imbrication des appels à map fonctionne mais laisse également à désirer.
