@@ -72,7 +72,7 @@ Notre fichier de définition dépends d'une image `precise64` donc notre VM tour
 - install sbt
 - se place dans le dossier de dev et lance un premier sbt update
 
-```bash|linenos
+```bash
 #!/usr/bin/env bash
 USER=$1
 
