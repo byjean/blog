@@ -2,6 +2,8 @@ url: http://blog.byjean.eu
 title: Byjean
 subtitle: Scala, Javascript vs Craftsmanship
 author: Jean Helou
+subscribe_rss: /atom.xml
+
 sass:
     #style: compressed
     sass_dir: _sass
