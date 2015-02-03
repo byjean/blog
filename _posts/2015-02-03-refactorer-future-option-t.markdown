@@ -13,7 +13,7 @@ Contexte
 Partons d'un exemple simple et développons un micro-service qui expose des `Articles` au format JSON. Il ne permet que de lire le détail d'un article à partir de son identifiant en accédant à la ressource suivante :
 
 ```bash
- GET /article/:id
+GET /article/:id
 
 ```
 
