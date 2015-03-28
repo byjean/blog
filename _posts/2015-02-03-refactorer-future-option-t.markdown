@@ -6,7 +6,7 @@ comments: true
 locale: fr
 ---
 
-Depuis quelques temps je travaille sur une application Play 2 en scala. Nos APIs d'accès aux données sont asynchrones et renvoient toutes des `Futures[T]`. Avec une telle API, on se retrouve vite avec des signatures de type `Future[Option[T]]`. Transformer proprement un tel résultat vers des réponses HTTP propres n'est pas forcément évident et peut amener de la duplication même dans des cas simples. Dans cet article nous allons voir une façon d'éviter ce problème.
+Depuis quelques temps je travaille sur une application Play 2 en scala. Nos APIs d'accès aux données sont asynchrones et renvoient toutes des `Futures[T]`. Avec une telle API, on se retrouve vite avec des signatures de type `Future[Option[T]]`. Transformer proprement un tel résultat vers des réponses HTTP n'est pas forcément évident et peut amener de la duplication même dans des cas simples. Dans cet article nous allons voir une façon d'éviter ce problème.
 
 Contexte
 ------
