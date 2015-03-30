@@ -235,4 +235,4 @@ Conclusion
 
 Nous avons amélioré notre code initial, extrait une fonctionnalité transverse et fortement gagné en lisibilité dans la resource. Celle ci n'a désormais pour responsabilité que de coordonner le chargement de l'article et de demander la transformation en JSON au service correspondant. Dans le cas d'un appel plus complexe, on pourrait effectuer la validation du format d'entrée et extraire l'appel du repository dans un service.
 
-Cependant les lignes 28 à 33 du `JsonResultMapper` restent suspectes. Les cas d'erreurs ne sont pas traités dans le même bloc logique et utiliser le pattern matching pour "cacher" l'imbrication des appels à map fonctionne mais laisse également à désirer.
+Cependant l'implementation `toJsonResult` du `JsonResultMapper` restent suspectes. Les cas d'erreurs ne sont pas traités dans le même bloc logique et utiliser le pattern matching pour "cacher" l'imbrication des appels à map fonctionne mais laisse également à désirer.
