@@ -12,6 +12,7 @@ Ces deux approches, relativement simples ont toutes deux montré des limites: la
 
 Dans cet article je vous propose d'explorer une piste proposée par la programmation fonctionnelle: la composition du type Future et du type Option dans un type _ad hoc_.
 
+<!--more-->
 Le type `FutureO`
 -----
 

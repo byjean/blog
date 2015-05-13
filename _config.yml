@@ -10,6 +10,8 @@ sass:
 paginate: 5          # Posts per page on the blog index
 paginate_path: page/:num # Pagination dir settings
 titlecase: true       # Converts page and post titles to titlecase
+excerpt_separator: <!--more-->
+excerpt_link: ...
 highlighter: pygments
 markdown: redcarpet
 redcarpet:

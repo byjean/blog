@@ -11,3 +11,12 @@
 @import "partials";
 
 @import "custom/syntax";
+
+#content {
+  .blog-index {
+    a[rel=full-article]{
+      padding: 0 .8em;
+      line-height: normal;
+    }
+  }
+}

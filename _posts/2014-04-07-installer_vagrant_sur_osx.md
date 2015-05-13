@@ -9,7 +9,6 @@ comments: true
 
 J'ai eu l'occasion de travailler un peu avec [Vagrant](http://www.vagrantup.com) ces dernier temps. L'installation sur OS X peut être assez compliquée, je vous livre ici la recette la plus simple que j'ai trouvé.
 
-
 Premièrement, installez Homebrew
 --------
 

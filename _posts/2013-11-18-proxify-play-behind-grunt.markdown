@@ -11,7 +11,7 @@ comments: true
 I like the idea of using the best tool for the job. As I write this the best tool for web frontend development is clearly a js stack. However it is still my belief that the server is better served by a strongly typed language (and I now also prefer statically typed). I currently work on a Play 2.2 application which uses a full js frontend. The problem is that js stacks are better served by grunt (or brunch) with  minification, concatenation, sourcemap, coffee compilation, livereload, etc. At the same time play is able to restart and recompile my play app without me needed to do anything.
 
 Getting both to cooperate in dev mode without hitting the cross origin restrictions requires a proxy. Instead of using yet another tool in dev mode to do the proxyfication (I do recommand using such a tool in production though), I decided to have grunt proxify requests he wasn't able to handle.
-
+<!--more-->
 It all starts with writing a quick proxy handler wich goes in your `Gruntfile.js`:
 
 ```js

@@ -10,6 +10,7 @@ locale: fr
 
 Nous savons maintenant [installer vagrant sur osx](/2014/04/07/installer_vagrant_sur_osx/) et utiliser vagrant pour [construire une vm](/2014/04/09/construire-une-machine-virtuelle-Vagrant/). Ces derniers temps le nombre de technologies différentes utilisées dans les projets à augmenté. La philosophie "Best tool for the job", que je soutiens totalement, encourage cette prolifération.
 
+<!--more-->
 Pourquoi Vagrant
 -------
 

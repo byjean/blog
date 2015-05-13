@@ -10,6 +10,7 @@ locale: fr
 
 Dans un [précédent billet](/2014/04/07/installer_vagrant_sur_osx/), nous avons vu comment installer vagrant facilement sur Mac OS X. Voyons maintenant comment l'utiliser pour démrrer une machine virtuelle simplement.
 
+<!--more-->
 Construire une image vide
 -------
 Crééz vous un dossier pour le projet et placez vous dedans:
