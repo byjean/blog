@@ -115,7 +115,7 @@ Rester à nettoyer `ResultMapper`, problématique plus conséquente:
   }
 ```
 
-La signature de jsonOk impose l'utilisation des parenthèses et du `_` en raison de ses deux listes d'arguments. Le compilateur scala, ne permet pas de mettre la liste des arguments implicites en premier, ce qui permettrait de transformer notre méthode en fonction. Il reste possible de contourner cette limitation de la façon suivante :
+La signature de jsonOk impose l'utilisation des parenthèses et du `_` en raison de ses deux listes d'arguments. Le compilateur scala, ne permet pas de mettre la liste des arguments implicites en premier, ce qui permettrait de transformer notre méthode en fonction. Il est possible de contourner cette limitation de la façon suivante :
 
 ```scala
 def jsonOk[A:Writes]: A => Result = (subject: A)=> Ok(Json.toJson(subject))
