@@ -46,7 +46,7 @@ case class FutureO[+A](future: Future[Option[A]]) extends AnyVal {
 }
 ```
 
-Utiliser FutureO
+Utiliser `FutureO`
 -----
 
 La première étape pour utiliser notre type `FutureO` est de changer la signature d'`ArticleRepository`
