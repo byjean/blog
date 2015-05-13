@@ -6,7 +6,7 @@ comments: true
 locale: fr
 ---
 
-Dans les précedents articles, nous avons étudiés comment améliorer la lisibilité de code manipulant le type `Future[Option[T]]` en appliquant [le principe de séparation des responsabilité]({% post_url 2015-02-03-refactorer-future-option-t %}) et en utilisant [des exceptions métier]({% post_url 2015-03-28-refactorer-future-option-t-exceptions %}).
+Dans les précedents articles, nous avons étudié comment améliorer la lisibilité de code manipulant le type `Future[Option[T]]` en appliquant [le principe de séparation des responsabilité]({% post_url 2015-02-03-refactorer-future-option-t %}) et en utilisant [des exceptions métier]({% post_url 2015-03-28-refactorer-future-option-t-exceptions %}).
 
 Ces deux approches, relativement simples ont toutes deux montré des limites: la première mélange le traitement de cas d'erreurs avec le traitement de cas normaux, la seconde perd de l'information au niveau du système de type et nécessite une connaissance de précise de l'implémentation ou une documentation détaillée pour pouvoir être correctement manipulée.
 
