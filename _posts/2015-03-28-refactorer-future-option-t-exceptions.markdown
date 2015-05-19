@@ -13,6 +13,11 @@ En conclusion je faisait remarquer que la répartition des traitements succès/e
 Je vais maintenant montrer que l'utilisation d'exceptions métier est une façon de regrouper les cas d'erreurs dans le même bloc et de conserver un _happy path_ simple.
 
 <!--more-->
+Code
+----
+
+Le code pour cet articles est disponible sur [github](https://github.com/jeantil/futureOption) sous le tag `article-2`
+
 Exception `ArticleNotFound`
 -----
 

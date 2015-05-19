@@ -9,6 +9,11 @@ locale: fr
 Depuis quelques temps je travaille sur une application Play 2 en scala. Nos APIs d'accès aux données sont asynchrones et renvoient toutes des `Futures[T]`. Avec une telle API, on se retrouve vite avec des signatures de type `Future[Option[T]]`. Transformer proprement un tel résultat vers des réponses HTTP n'est pas forcément évident et peut amener de la duplication même dans des cas simples. Dans cet article nous allons voir une façon d'éviter ce problème.
 
 <!--more-->
+Code
+----
+
+Le code pour cet articles est disponible sur [github](https://github.com/jeantil/futureOption) sous le tag `article-1`
+
 Contexte
 ------
 Partons d'un exemple simple et développons un micro-service qui expose des `Articles` au format JSON. Il ne permet que de lire le détail d'un article à partir de son identifiant en accédant à la ressource suivante :
