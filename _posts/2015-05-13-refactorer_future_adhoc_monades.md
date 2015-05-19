@@ -81,7 +81,9 @@ def toJsonResult[A](subjectFuture: FutureO[A])
                      onError:PartialFunction[Throwable, Result]=internalServerErrorHandler)
                     (implicit writer: Writes[A]): Future[Result] = {
    subjectFuture.map(jsonOk).getOrElse(onNotFound).recover(onError)
- }def jsonNotFound(msg: String) = NotFound(Json.obj("reason" -> msg))
+ }
+
+ def jsonNotFound(msg: String) = NotFound(Json.obj("reason" -> msg))
 ```
 
 Le code appelant ne change que très peu, il suffit d'enlever le `case` de la `PartialFunction`.
