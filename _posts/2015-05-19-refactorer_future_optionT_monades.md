@@ -90,10 +90,12 @@ Le code d'`ArticleREST` n'a pas besoin de changer et la gestion des erreurs est 
 ```
 
 Il manque un paramètre implicite permettant de prouver à Scalaz qu'une Future est bien un Functor. Si vous utilisez une version de Scalaz supérieur à 7.1.x, il suffit d'ajouter l'import
+
 ```scala
   import scalaz.std.scalaFuture
 ```
 pour les versions précédentes ou si vous souhaitez limiter au maximum le nombre d'implicites dans le _scope_, la définition suivante suffit :
+
 ```scala
   implicit val futureFunctor = new Functor[Future] {
       override def map[A, B](fa: Future[A])(f: (A) => B): Future[B] = fa.map(f)
