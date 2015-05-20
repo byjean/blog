@@ -16,7 +16,7 @@ Dans cet article je vous propose d'explorer une piste proposée par la programma
 Code
 ----
 
-Le code pour cet articles est disponible sur [github](https://github.com/jeantil/futureOption) sous le tag `article-3`
+Le code pour cet articles est disponible sur [github](https://github.com/jeantil/blog-samples) sous le tag `futureOption/3-type_ad_hoc` et dans la branche `futureOption`
 
 Le type `FutureO`
 -----

@@ -12,7 +12,7 @@ Depuis quelques temps je travaille sur une application Play 2 en scala. Nos APIs
 Code
 ----
 
-Le code pour cet articles est disponible sur [github](https://github.com/jeantil/futureOption) sous le tag `article-1`
+Le code pour cet articles est disponible sur [github](https://github.com/jeantil/blog-samples) sous le tag `futureOption/1-separation_responsabilite` et dans la branche `futureOption`
 
 Contexte
 ------

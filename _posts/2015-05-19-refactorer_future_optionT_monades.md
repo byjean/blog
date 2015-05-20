@@ -20,7 +20,7 @@ Dans cet article, le dernier de cette série, je vous propose un dernier refacto
 Code
 ----
 
-Le code pour cet articles est disponible sur [github](https://github.com/jeantil/futureOption) sous le tag `article-4`
+Le code pour cet articles est disponible sur [github](https://github.com/jeantil/blog-samples) sous le tag `futureOption/4-optionT_scalaz` et dans la branche `futureOption`
 
 `MonadTransformer`
 -----

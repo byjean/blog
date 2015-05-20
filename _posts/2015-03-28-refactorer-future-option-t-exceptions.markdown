@@ -16,7 +16,7 @@ Je vais maintenant montrer que l'utilisation d'exceptions métier est une façon
 Code
 ----
 
-Le code pour cet articles est disponible sur [github](https://github.com/jeantil/futureOption) sous le tag `article-2`
+Le code pour cet articles est disponible sur [github](https://github.com/jeantil/blog-samples) sous le tag `futureOption/2-business_exception` et dans la branche `futureOption`
 
 Exception `ArticleNotFound`
 -----
