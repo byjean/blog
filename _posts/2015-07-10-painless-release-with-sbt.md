@@ -342,7 +342,7 @@ Changing the default version bump from bugfix to minor is just a matter of chang
 Conclusion
 ======
 
-We now have an SBT build which delegates versioning to git, packages applications as a deployable zip file, tags the release automatically and publishes it to your company's artifact repository before pushing the tag on your remote git server in a single command. At the same time, every package built is versioned with the SHA-1 of the HEAD which was checked out to build it. You will find the complete project's code on github.
+We now have an SBT build which delegates versioning to git, packages applications as a deployable zip file, tags the release automatically and publishes it to your company's artifact repository before pushing the tag on your remote git server in a single command. At the same time, every package built is versioned with the SHA-1 of the HEAD which was checked out to build it. You will find the complete project's [code on github](https://github.com/jeantil/blog-samples/tree/painless-sbt-build).
 
 You might wonder where the buildinfo plugin I introduced initially comes in ? Having the binary package be able to report its own version enables relatively simple package promotion schemes.
 
