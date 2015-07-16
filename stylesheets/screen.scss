@@ -20,3 +20,15 @@
     }
   }
 }
+.footnotes {
+  ol{
+    margin-top: 1em;
+  }
+  ol:before {
+  content: "Notes";
+  @extend .heading;
+  font-size: 1.5em;
+  font-family: $header-title-font-family;
+  font-weight: normal;
+  }
+}
