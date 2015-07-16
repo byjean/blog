@@ -27,7 +27,7 @@ Le code pour cet articles est disponible sur [github](https://github.com/jeantil
 Je n'ai pas l'intention de me prêter au périlleux exercice qui consiste à essayer de définir ce que représente une `Monad`, d'autres s'y sont attelés et une [recherche google](https://www.google.fr/search?q=d%C3%A9finition+de+monade+programmation) vous fournira toute l'information que vous pourriez vouloir (et sans doute plus).
 
 Les types _monadiques_ ont des propriétés intéressantes du point de vue de la composition. C'est parceque `Future` et `Option` peuvent être considérés comme des types monadiques que nous avons pu les composer pour créer `FutureO`.
-D'un point de vue purement *pragmatique*<sup>[1]</sup>, on peut considérer que tout type qui respecte le contrat logique suivant est monadique :
+D'un point de vue purement *pragmatique*[^1], on peut considérer que tout type qui respecte le contrat logique suivant est monadique :
 
 ```scala
 Monad[A]{
@@ -112,6 +112,5 @@ Il est tout a fait possible de commencer par déveloper quelques types _ad hoc_ 
 Scalaz souffre d'une image négative, l'utilisation d'opérateurs unicodes, l'utilisation massive d'implicites et la personnalité corrosive de certains de ses défenseurs y ont largement contribué.  
 Cependant, il est maintenant possible d'utiliser les types que propose la bibliothèque de façon selective ce qui fait diminuer le coût d'entrée  de cette lib dans un projet.
 
-Notes
-----
-[1] La véritable définition est mathématique et très formelle. Elle entraine régulièrement des débats sans fin à propos de types qui ne respectent pas tout à fait les lois monadique (par exemple Future et Try à cause des exceptions). Certes ces types ne sont pas parfaitement pur et il est possible qu'il existe des implémentations pures mais du point de vue de l'utilisateur ça n'a pas tant d'importance.
+
+[^1]: La véritable définition est mathématique et très formelle. Elle entraine régulièrement des débats sans fin à propos de types qui ne respectent pas tout à fait les lois monadique (par exemple Future et Try à cause des exceptions). Certes ces types ne sont pas parfaitement pur et il est possible qu'il existe des implémentations pures mais du point de vue de l'utilisateur ça n'a pas tant d'importance.
