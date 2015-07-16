@@ -14,7 +14,7 @@ In this article I am going to detail an SBT combo allowing for SHA-1 based conti
 <!--more-->
 
 Starting point
-======
+-----
 We start from a very basic play project with the following structure
 
 ```
@@ -37,7 +37,7 @@ We start from a very basic play project with the following structure
 
 
 sbt-buildinfo
-======
+-----
 
 The first piece of the combo is to use the [sbt-buildinfo](https://github.com/sbt/sbt-buildinfo) plugin to encode the project version in the generated artifact.  
 
@@ -116,7 +116,7 @@ This call can be extended as the application grows. I usually add checks on exte
 Now that we can display our own version, let's customize it.
 
 sbt-git
-=====
+-----
 
 [sbt-git](https://github.com/sbt/sbt-git) is a very useful plugin, it will provide your with a nice prompt showing git information right there in sbt.
 It can also derive the version from in various ways.
@@ -207,7 +207,7 @@ This scheme yields the following versions in order:
 These versions are compatible with both nexus rules if you deploy your binaries there and with semantic versioning rules while preserving SHA-1 information whenever it is necessary.
 
 sbt-native-packager
-======
+-----
 
 When releasing an application (as opposed to a library), it is beneficial to package it up and release the whole package. The [sbt-native-packager](https://github.com/sbt/sbt-native-packager) makes it easy to target various kinds of packages zip, tarball, dmg, rpm, deb you name it and it will package it for you. Such packages make the lives of anyone who needs to handle operations around the application much easier.
 
@@ -225,7 +225,7 @@ makeDeploymentSettings(Universal, packageBin in Universal, "zip")
 Here I choose to publish a zip, feel free to adjust that to your needs with the help of the [documentation](http://www.scala-sbt.org/sbt-native-packager/formats/index.html)
 
 sbt-release
-======
+-----
 
 The next step to the ultimate sbt build is to add the [sbt-release](https://github.com/sbt/sbt-release) plugin. As for the other plugins, create a `release.sbt` file in your project directory with the following content:
 
@@ -340,7 +340,7 @@ Changing the default version bump from bugfix to minor is just a matter of chang
 
 
 Conclusion
-======
+-----
 
 We now have an SBT build which delegates versioning to git, packages applications as a deployable zip file, tags the release automatically and publishes it to your company's artifact repository before pushing the tag on your remote git server in a single command. At the same time, every package built is versioned with the SHA-1 of the HEAD which was checked out to build it. You will find the complete project's [code on github](https://github.com/jeantil/blog-samples/tree/painless-sbt-build).
 
