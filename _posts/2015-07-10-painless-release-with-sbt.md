@@ -11,6 +11,7 @@ However as a project stakeholder, I need human understandable versions to provid
 
 In this article I am going to detail an SBT combo allowing for SHA-1 based continuous delivery to an integration environment. The combo then allows to easily promote from this integration environment to QA, PreProd and Production platforms, creating a human understandable version in the process.
 
+**edit -- Added missing bumper function for release version**
 <!--more-->
 
 Starting point
@@ -313,7 +314,17 @@ def setVersionOnly(selectVersion: Versions => String): ReleaseStep =  { st: Stat
 lazy val setReleaseVersion: ReleaseStep = setVersionOnly(_._1)
 ```
 
-Next you need to decide if you want to push the default build artifacts (usually a jar) which is the right choice for a library, or the packaged artifacts which is most likely what you want for an application. Then you can override the `releaseProcess` to match your need.
+Next we need to change slightly the way the release version is computed. Sbt-git derives the version number directly from the tag which means our _snapshot_ builds numbered `1.0.0-x-gyyyyyy-SNAPSHOT` is actually destined to be released as `1.0.1` not as `1.0.0` (since the `1.0.0` is derived from an existing tag). We need to change the release version computation logic slightly :
+
+```scala
+releaseVersion <<= (releaseVersionBump)( bumper=>{
+   ver => Version(ver)
+          .map(_.withoutQualifier)
+          .map(_.bump(bumper).string).getOrElse(versionFormatError)
+})
+```
+
+Finally you need to decide if you want to push the default build artifacts (usually a jar) which is the right choice for a library, or the packaged artifacts which is most likely what you want for an application. Then you can override the `releaseProcess` to match your need.
 
 Below is a sample release process for an application, to switch it to a library you would uncomment the publishArtifacts and comment the next line which is used to publish the package from the Universal namespace.
 
