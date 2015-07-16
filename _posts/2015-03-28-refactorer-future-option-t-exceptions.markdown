@@ -3,7 +3,7 @@ layout: post
 title: "Refactorer Future[Option[T]] : Les exceptions business"
 tags: [scala, play2, refactoring, craftsmanship]
 comments: true
-locale: fr
+lang: fr
 ---
 
 Dans le [précedent article]({% post_url 2015-02-03-refactorer-future-option-t %}), nous avons vu comment mitiger les effets des signatures de type `Future[Option[T]]` sur la lisibilité du code. L'extraction d'un `ResultMapper` et l'utilisation du pattern matching ont permis de séparer les différentes problématiques du code initial.

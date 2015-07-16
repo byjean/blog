@@ -6,8 +6,9 @@
 {% capture updated_formatted %}{{ page.updated_formatted }}{{ post.updated_formatted }}{% endcapture %}
 {% capture was_updated %}{{ updated | size }}{% endcapture %}
 
+{% capture lang %}{{ page.lang }}{{ post.lang }}{% endcapture %}
 {% if has_date != '0' %}
-  {% capture time %}<time datetime="{{ date | datetime | date_to_xmlschema }}" pubdate{% if updated %} data-updated="true"{% endif %}>{{ date | date:"%Y-%m-%d" }}</time>{% endcapture %}
+  {% capture time %}<time datetime="{{ date | datetime | date_to_xmlschema }}" pubdate{% if updated %} data-updated="true"{% endif %} class="lang-{{lang}}">{{ date | date:"%Y-%m-%d" }}</time>{% endcapture %}
 {% endif %}
 
 {% if was_updated != '0' %}

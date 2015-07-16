@@ -3,7 +3,7 @@ layout: post
 title: "Refactorer Future[Option[T]] : la composition par un type <i>ad hoc</i>"
 tags: [scala, play2, programmation fonctionnelle, refactoring, craftsmanship]
 comments: true
-locale: fr
+lang: fr
 ---
 
 Dans les précedents articles, nous avons étudié comment améliorer la lisibilité de code manipulant le type `Future[Option[T]]` en appliquant [le principe de séparation des responsabilité]({% post_url 2015-02-03-refactorer-future-option-t %}) et en utilisant [des exceptions métier]({% post_url 2015-03-28-refactorer-future-option-t-exceptions %}).

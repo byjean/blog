@@ -5,6 +5,7 @@ category: [java]
 tags: [kata, java, craftsmanship]
 date: 2013-08-27 14:43
 published: false
+lang: en
 ---
 
 ###Kata

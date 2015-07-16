@@ -32,3 +32,24 @@
   font-weight: normal;
   }
 }
+.lang{
+  background-repeat: no-repeat;
+  background-position: 0 3px;
+  padding-left: 30px;
+  background-size: 20px 13px;
+}
+header, #recent_posts, #blog-archives {
+  .lang-en{
+    background-image: url(../images/langs/en.svg);
+    @extend .lang;
+  }
+  .lang-fr{
+    background-image: url(../images/langs/fr.svg);
+    @extend .lang;
+  }
+}
+#blog-archives{
+  time{
+    margin-left: -10px;
+  }
+}

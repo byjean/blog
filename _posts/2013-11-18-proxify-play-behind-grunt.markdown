@@ -4,8 +4,8 @@ title: Proxifying play server behind grunt for full stack dev
 categories: [scala, js]
 tags: [scala, Play! 2, js]
 date: 2013-11-18 14:00
-published: true
 comments: true
+lang: en
 ---
 
 I like the idea of using the best tool for the job. As I write this the best tool for web frontend development is clearly a js stack. However it is still my belief that the server is better served by a strongly typed language (and I now also prefer statically typed). I currently work on a Play 2.2 application which uses a full js frontend. The problem is that js stacks are better served by grunt (or brunch) with  minification, concatenation, sourcemap, coffee compilation, livereload, etc. At the same time play is able to restart and recompile my play app without me needed to do anything.

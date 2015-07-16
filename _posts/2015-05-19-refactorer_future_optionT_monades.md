@@ -3,7 +3,7 @@ layout: post
 title: "Refactorer Future[Option[T]] : OptionT de Scalaz"
 tags: [scala, play2, scalaz, programmation fonctionnelle, refactoring, craftsmanship]
 comments: true
-locale: fr
+lang: fr
 ---
 
 Dans [les]({% post_url 2015-02-03-refactorer-future-option-t %}) [précédents]({% post_url 2015-03-28-refactorer-future-option-t-exceptions %}) [articles]({% post_url 2015-05-13-refactorer_future_adhoc_monades %}), nous avons étudié 3 refactorings permettant d'améliorer la lisibilité de code manipulant le type `Future[Option[T]]`.

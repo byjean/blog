@@ -3,8 +3,8 @@ layout: post
 title: Installation facile de vagrant sur OSX
 categories: [devops]
 tags: [vagrant, virtualization, brew]
-published: true
 comments: true
+lang: en
 ---
 
 J'ai eu l'occasion de travailler un peu avec [Vagrant](http://www.vagrantup.com) ces dernier temps. L'installation sur OS X peut être assez compliquée, je vous livre ici la recette la plus simple que j'ai trouvé.

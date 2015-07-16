@@ -3,7 +3,7 @@ layout: post
 title: "Improve your 'Test-First' experience with Intellij IDEA"
 tags: [tooling, craftsmanship,tdd]
 comments: true
-locale: en
+lang: en
 ---
 
 I recently helped friends create a koans-based exercise to introduce people to CQRS and event sourcing[^1]. I was tasked with creating the Java version of the exercise. Since the whole exercise was going to depend on the quality of the tests, we applied a test first approach.

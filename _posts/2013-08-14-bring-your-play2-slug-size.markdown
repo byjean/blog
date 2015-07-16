@@ -4,8 +4,8 @@ title: Bringing Play! 2 Heroku slug size under control
 categories: [scala, Play! 2]
 tags: [heroku, scala, Play! 2, shell]
 date: 2013-08-15 09:00
-published: true
 comments: true
+lang: en
 ---
 *** EDIT 2013-10-11 ***
 

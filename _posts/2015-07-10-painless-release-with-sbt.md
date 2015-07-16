@@ -3,7 +3,7 @@ layout: post
 title: "Painless release with SBT"
 tags: [scala, sbt,craftsmanship,continuous integration]
 comments: true
-locale: en
+lang: en
 ---
 
 As a developer, the only version which really matters is the SHA-1 of the commit from which a deployed artifact was built. It lets me quickly get the source code for this artifact back if a patch is needed.
