@@ -80,7 +80,7 @@ buildInfoKeys := Seq[BuildInfoKey](name, version, scalaVersion, sbtVersion)
 buildInfoPackage := "eu.byjean"
 ```
 
-This will create an object called `BuildInf` in the configured package. Using this object we can create a useful little endpoint in our app : `GET /health`.
+This will create an object called `BuildInfo` in the configured package. Using this object we can create a useful little endpoint in our app : `GET /health`.
 
 We need to implement the `Health#check` method :
 
