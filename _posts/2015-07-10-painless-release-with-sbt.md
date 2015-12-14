@@ -12,6 +12,7 @@ However as a project stakeholder, I need human understandable versions to provid
 In this article I am going to detail an SBT combo allowing for SHA-1 based continuous delivery to an integration environment. The combo then allows to easily promote from this integration environment to QA, PreProd and Production platforms, creating a human understandable version in the process.
 
 **edit -- Added missing bumper function for release version**
+
 <!--more-->
 
 Starting point
