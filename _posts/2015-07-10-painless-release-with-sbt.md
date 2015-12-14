@@ -12,6 +12,7 @@ However as a project stakeholder, I need human understandable versions to provid
 In this article I am going to detail an SBT combo allowing for SHA-1 based continuous delivery to an integration environment. The combo then allows to easily promote from this integration environment to QA, PreProd and Production platforms, creating a human understandable version in the process.
 
 **edit -- Added missing bumper function for release version**
+**edit -- Bump sbt-git version, drop corresponding obsolete code (as it fixes [#89](https://github.com/sbt/sbt-git/issues/89) and [#67](https://github.com/sbt/sbt-git/issues/67))**
 
 <!--more-->
 
@@ -126,7 +127,7 @@ It can also derive the version from in various ways.
 To enable it create a `git.sbt` file in the `project` directory with the following content (again check for newer versions):
 
 ```scala
-addSbtPlugin("com.typesafe.sbt" % "sbt-git" % "0.8.4")
+addSbtPlugin("com.typesafe.sbt" % "sbt-git" % "0.8.5")
 ```
 
 Your project tree should now look like
@@ -173,20 +174,15 @@ git.useGitDescribe := true
 ```
 Using `useGitDescribe` has a few shortcomings :
 
-* The `git describe` command assumes that there is at least one tag in the repository. This can be a problem for new projects or for projects which are only starting to use tags as version markers since it will prevent the project from starting[^2].
 * Non version related tags can interfere with sbt versioning.
-* The version reported by `git describe` starts with a most unwelcome 'v' character[^3].
 * In my specific case,I want all versions which are not exactly a version tag to be considered `-SNAPSHOTS`
 
-Luckily the versioning scheme is pretty easy to extend to eliminate these problems.
-We can add a fallback if `git describe` output is invalid, falling back to a base version suffixed with the SHA-1 of `HEAD` and `-SNAPSHOT`. If the repository doesn't even have a commit yet we can just display the same base version suffixed by `-SNAPSHOT` with the following code :
+Luckily the versioning scheme is pretty easy to extend to eliminate these problems. First, make the version start somewhere :
 
 ```scala
 git.baseVersion := "0.0.0"
-git.gitDescribedVersion := gitReader.value.withGit(_.describedVersion).flatMap(v =>
-  Option(v).map(_.drop(1)).orElse(formattedShaVersion.value).orElse(Some(git.baseVersion.value))
-)
 ```
+
 Now to avoid accidental versioning issue from non version related tags and enforce my `-SNAPSHOT` rules :
 
 ```scala
@@ -258,7 +254,7 @@ Your project tree should then look like this :
     └── resources
 ```
 
-Now the plugin is present lets configure it so it plays nice with our versioning scheme. By default the sbt-release plugin behaves kind of like the maven release plugin. It will :
+Now the plugin is present, lets configure it so it plays nice with our versioning scheme. By default the sbt-release plugin behaves kind of like the maven release plugin. It will :
 
 * Check for SNAPSHOT dependencies and prevent the release if any are present.
 * Ask for the release version and next development version (or use defaults if the `with-defaults` argument is used).
@@ -272,7 +268,7 @@ Now the plugin is present lets configure it so it plays nice with our versioning
 * Commit the version file.
 * Push all the changes.
 
-All these steps are there to ensure a repeatable build. I think it lacks a test run with the release version applied to be an exact match for the maven release process. In our case though where the version is fully derived from the VCS, this is slightly overkill.
+All these steps are here to ensure a repeatable build. I think it lacks a test run with the release version applied to be an exact match for the maven release process. In our case though where the version is fully derived from the VCS, this is slightly overkill.
 
 With our setup, if we want to be able to repeat a specific version build all we have to do is checkout the corresponding tag which will automatically set the version to the correct value. Additionally, writing the version to an SBT file will kill the SHA-1 based versioning scheme we were using.
 
@@ -364,5 +360,3 @@ Promoting from QA to pre-prod or prod is even simpler : fetch the version from t
 
 
 [^1]: This might change in the future, follow [sbt-git#93](https://github.com/sbt/sbt-git/issues/93) for more
-[^2]: This is an acknowledged bug in sbt-git with a couple fixes pending, see [sbt-git#89](https://github.com/sbt/sbt-git/issues/89) for more
-[^3]: This is also a known bug in sbt-git with a pull request pending, see [sbt-git#67](https://github.com/sbt/sbt-git/issues/67) for more. Beware that when this is fixed, you will have to remove the `_.drop(1)` call to avoid dropping your major version number.
