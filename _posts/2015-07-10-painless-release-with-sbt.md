@@ -121,8 +121,8 @@ Now that we can display our own version, let's customize it.
 sbt-git
 -----
 
-[sbt-git](https://github.com/sbt/sbt-git) is a very useful plugin, it will provide your with a nice prompt showing git information right there in sbt.
-It can also derive the version from in various ways.
+[sbt-git](https://github.com/sbt/sbt-git) is a very useful plugin, it will provide you with a nice prompt showing git information right there in sbt.
+It can also derive the version of the project from the git history in various ways.
 
 To enable it create a `git.sbt` file in the `project` directory with the following content (again check for newer versions):
 
@@ -193,6 +193,7 @@ git.gitTagToVersionNumber := {
   case VersionRegex(v,s) => Some(s"$v-$s-SNAPSHOT")
   case _ => None
 }
+
 ```
 
 This scheme yields the following versions in order:
