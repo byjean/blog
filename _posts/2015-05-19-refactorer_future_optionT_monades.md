@@ -113,4 +113,4 @@ Scalaz souffre d'une image négative, l'utilisation d'opérateurs unicodes, l'ut
 Cependant, il est maintenant possible d'utiliser les types que propose la bibliothèque de façon selective ce qui fait diminuer le coût d'entrée  de cette lib dans un projet.
 
 
-[^1]: La véritable définition est mathématique et très formelle. Elle entraine régulièrement des débats sans fin à propos de types qui ne respectent pas tout à fait les lois monadique (par exemple Future et Try à cause des exceptions). Certes ces types ne sont pas parfaitement pur et il est possible qu'il existe des implémentations pures mais du point de vue de l'utilisateur ça n'a pas tant d'importance.
+[^1]: La véritable définition est mathématique et très formelle. Elle entraine régulièrement des débats sans fin à propos de types qui ne respectent pas tout à fait les lois monadiques (par exemple Future et Try à cause des exceptions). Certes ces types ne sont pas parfaitement purs et il est possible qu'il existe des implémentations pures mais du point de vue de l'utilisateur ça n'a pas tant d'importance.
