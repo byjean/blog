@@ -14,13 +14,13 @@ Finalement l'utilisation d'un type _ad hoc_ composant les propriétés d'une `Fu
 
 Le seul défaut de cette dernière approche est le besoin de maintenir ce type et de construire un nouveau type pour chaque nouvelle composition: `FutureO` (`Future` et `Option`), `FutureL` (`Future` et `List`), etc. Ces types ne sont pas spécifiques à un projet et idéalement devraient être extraits dans une bibliothèque. Il s'avère qu'une telle bibliothèque existe déjà.
 
-Dans cet article, le dernier de cette série, je vous propose un dernier refactoring utilisant les `MonadTransformer` de Scalaz 7.x.
+Dans cet article, le dernier de cette série, je vous propose un refactoring utilisant les `MonadTransformer` de Scalaz 7.x.
 
 <!--more-->
 Code
 ----
 
-Le code pour cet articles est disponible sur [github](https://github.com/jeantil/blog-samples) sous le tag `futureOption/4-optionT_scalaz` et dans la branche `futureOption`
+Le code pour cet article est disponible sur [github](https://github.com/jeantil/blog-samples) sous le tag `futureOption/4-optionT_scalaz` et dans la branche `futureOption`
 
 `MonadTransformer`
 -----
@@ -39,7 +39,7 @@ Monad[A]{
 ```
 Dans la bibliothèque standard de scala, les types `Option`, `Future`, `Try`, `String`, `Map`, `Seq`, et bien d'autres peuvent donc être considérés comme monadiques. Scalaz propose des alternatives monadiques à certains types de la bibliothèque standard qui ne sont pas compatibles avec l'interface (comme Either par exemple).
 
-Si deux types sont compatibles avec le contrat ci-dessus, il est possible d'implémenter un `MonadTransformer` pour ces deux types. L'implémentation d'un tel type n'est pas forcément triviale, heureusement Scalaz propose déjà un grand nombre d'implémentations. Celle qui nous interesse et qui permet de composer `Option` et `Future` s'appelle `OptionT`. Il permet en réalité de composer `Option` avec n'importe quelle type monadique.
+Si deux types sont compatibles avec le contrat ci-dessus, il est possible d'implémenter un `MonadTransformer` pour ces deux types. L'implémentation d'un tel type n'est pas forcément triviale, heureusement Scalaz propose déjà un grand nombre d'implémentations. Celle qui nous intéresse et qui permet de composer `Option` et `Future` s'appelle `OptionT`. Il permet en réalité de composer `Option` avec n'importe quelle type monadique.
 
 Utiliser OptionT
 -----
@@ -106,9 +106,9 @@ Dans les deux cas, l'ExecutionContext présent dans le _scope_ implicite sera ut
 Conclusion
 ----
 
-L'utilisation du type `OptionT[Future,Article]` offre les même avantages que l'utilisation de FutureO, et va bien au-delà en généralisant cette composition à tous les types qui offrent un comportement monadique. Avatange supplémentaire, il n'est plus nécessaire de maintenir sa propre bibliothèque de types "pré composés", ceux-ci sont accessible directement par Scalaz.
+L'utilisation du type `OptionT[Future,Article]` offre les même avantages que l'utilisation de FutureO, et va bien au-delà en généralisant cette composition à tous les types qui offrent un comportement monadique. Avantage supplémentaire, il n'est plus nécessaire de maintenir sa propre bibliothèque de types "pré composés", ceux-ci sont accessible directement par Scalaz.
 
-Il est tout a fait possible de commencer par déveloper quelques types _ad hoc_ puis de les remplacer par des types de Scalaz en utilisant des alias de types et quelques imports.Ainsi lorsque le coût de maintenance ou le degré de répétition deviennent trop importants ou que Scalaz est importé pour d'autres raison la migration se fait avec un minimum de modifications.
+Il est tout a fait possible de commencer par développer quelques types _ad hoc_ puis de les remplacer par des types de Scalaz en utilisant des alias de types et quelques imports. Ainsi lorsque le coût de maintenance ou le degré de répétition deviennent trop importants ou que Scalaz est importé pour d'autres raisons la migration se fait avec un minimum de modifications.
 Scalaz souffre d'une image négative, l'utilisation d'opérateurs unicodes, l'utilisation massive d'implicites et la personnalité corrosive de certains de ses défenseurs y ont largement contribué.  
 Cependant, il est maintenant possible d'utiliser les types que propose la bibliothèque de façon selective ce qui fait diminuer le coût d'entrée  de cette lib dans un projet.
 
