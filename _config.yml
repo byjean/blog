@@ -12,16 +12,13 @@ paginate_path: page/:num # Pagination dir settings
 titlecase: true       # Converts page and post titles to titlecase
 excerpt_separator: <!--more-->
 excerpt_link: ...
-highlighter: pygments
-markdown: redcarpet
-redcarpet:
-    extensions:
-    - fenced_code_blocks
-    - strikethrough
-    - autolink
-    - footnotes
-    - smart
 
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+
+gems: [jekyll-paginate]
 # ----------------------- #
 #   3rd Party Settings    #
 # ----------------------- #
