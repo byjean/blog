@@ -10,7 +10,7 @@ To test polymer components, the recomended way is to use [web-component-tester](
 
 <!--more-->
 
-At work we use jenkins for continuous integration tasks, we naturally investigated how to automate our polymer tests from it. The saucelabs documentation on how to properly integrate selenium tests started from jenkins is [comprehensive](https://wiki.saucelabs.com/display/DOCS/Setting+Up+Sauce+Labs+with+Jenkins) but the bit on [`Setting Up Reporting between Sauce Labs and Jenkins`](https://wiki.saucelabs.com/display/DOCS/Setting+Up+Reporting+between+Sauce+Labs+and+Jenkins) assumes you have access to the low level webdriver instances:  
+At work we use jenkins for continuous integration tasks, we naturally investigated how to automate our polymer tests from it. The saucelabs documentation on how to properly integrate selenium tests started from jenkins is [comprehensive](https://wiki.saucelabs.com/display/DOCS/Setting+Up+Sauce+Labs+with+Jenkins) but the bit on [`Setting Up Reporting between Sauce Labs and Jenkins`](https://wiki.saucelabs.com/display/DOCS/Setting+Up+Reporting+between+Sauce+Labs+and+Jenkins) assumes you have access to the webdriver instance:  
 
 * to set the job name and job number you are expected to directly set them in the capabilites
 
