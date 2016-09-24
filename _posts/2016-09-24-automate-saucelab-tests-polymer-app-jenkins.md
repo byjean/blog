@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Polymer + saucelabs + jenkins"
+title: "Integrating Polymer web-component-tester, saucelabs and jenkins"
 tags: [polymer, js, gulp, saucelabs, jenkins]
 comments: true
 lang: en
