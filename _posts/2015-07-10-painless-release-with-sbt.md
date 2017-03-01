@@ -13,6 +13,9 @@ In this article I am going to detail an SBT combo allowing for SHA-1 based conti
 
 - **edit -- Added missing bumper function for release version**
 - **edit -- Bump sbt-git version, drop corresponding obsolete code (as it fixes [#89](https://github.com/sbt/sbt-git/issues/89) and [#67](https://github.com/sbt/sbt-git/issues/67))**
+- **edit -- mention ExtraReleaseCommands.initialVcsChecksCommand based on a suggestion from the comment section**
+
+
 
 <!--more-->
 
@@ -347,6 +350,12 @@ sbt release with-defaults
 
 Changing the default version bump from bugfix to minor is just a matter of changing `releaseVersionBump` to the appropriate settings for you.
 
+In the comments, Loki mentionned that you may want to add the following step to your release process:
+
+```scala
+releaseStepCommand(ExtraReleaseCommands.initialVcsChecksCommand),
+```
+This step will ensure that you don't have uncommitted changes in your workspace. Having uncommitted changes while releasing would break the repeatable build. A  checkout of the tag in a fresh clone of the repository would not have the uncomitted changes and might result in a different binary. I didn't mention this initially because our process is to trigger releases on a CI server which starts by doing a clone from scratch in a temporary workspace. If your release process isn't as strict, adding the `initialVcsChecksCommand` step at the beggining of your release process is definitely a good idea.
 
 Conclusion
 -----
