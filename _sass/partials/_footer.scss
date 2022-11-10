@@ -24,5 +24,6 @@ body > footer {
   }
   .github_repo {
     display: flex;
+    flex-grow: 1;
   }
 }
