@@ -29,10 +29,7 @@ aside.sidebar {
     margin-bottom: 0.5em;
     margin-left: 0;
   }
-  .social_link {
-    display: flex;
-    height: 2em;
-  }
+
   li {
     list-style: none;
     padding: .5em 0;
@@ -41,6 +38,10 @@ aside.sidebar {
     @extend .side-shadow-border;
     p:last-child {
       margin-bottom: 0;
+    }
+    .social_link {
+      display: flex;
+      height: 2em;
     }
   }
   a {
